@@ -1,0 +1,39 @@
+package Repository;
+
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import Entities.Estudiante;
+
+public class EstudianteRepository extends Repository<Estudiante> {
+
+	public EstudianteRepository(EntityManager em) {
+		super(em);
+	}
+	
+	public List<Estudiante> getAll() {
+		TypedQuery<Estudiante> tp = this.em.createNamedQuery(
+				Estudiante.BUSCAR_TODOS, Estudiante.class);
+		return tp.getResultList();
+	}
+	
+	@Override 
+	public Estudiante getById(int id) {
+		TypedQuery<Estudiante> tp = this.em.createNamedQuery(
+				Estudiante.BUSCAR_POR_NUM_LIBRETA, Estudiante.class).setParameter("num_libretaPass", id);
+		return tp.getSingleResult();
+	}
+
+	public List<Estudiante> getPorGenero(String genero) {
+		TypedQuery<Estudiante> tp = this.em.createNamedQuery(
+				Estudiante.BUSCAR_POR_GENERO, Estudiante.class).setParameter("generoPass", genero);
+		return tp.getResultList();
+	}
+
+	public List<Estudiante> getCarrerasPorCarreraCiudad(int carreraId, String ciudad) {
+		TypedQuery<Estudiante> tp = this.em.createNamedQuery(
+				Estudiante.BUSCAR_POR_CARRERA_Y_CIUDAD_RESIDENCIA, Estudiante.class).setParameter("carreraId", carreraId).setParameter("ciudadPass", ciudad);
+		return tp.getResultList();
+	}
+}

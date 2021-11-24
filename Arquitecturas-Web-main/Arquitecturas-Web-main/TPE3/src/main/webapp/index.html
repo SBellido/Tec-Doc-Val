@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>TP3 | Arq.Web </title>
+    </head>
+    <body>
+        <header>
+            <div>Unicen FCE - TUDAI - Arquitecturas Web 2021 - Tandil</div>
+            <div>Bellido Sebastian - Cepeda Tomas - Nuñez David</div>
+        </header>
+        <div class="container">
+            <div class="container_title">
+                <h1 class="title">Buscar estudiante por número libreta</h1>
+            </div>
+            <form method="post" id="for-buscar-alumno" class="container_form">
+                <label class="label" for="num_libreta">
+                    <span>Número Libreta</span>
+                    <input class="input" type="text" name="num_libreta" id="name"
+                        autocomplete="número de libreta" required>
+                </label>
+                <button class="send_button" type="submit">Buscar</button>
+            </form>
+            <div id="response-alumno">
+
+            </div>
+
+
+            <hr class="hr">
+            <div class="container_title">
+                <h1 class="title">Buscar alumnos por g&eacute;nero</h1>
+            </div>
+            <form method="post" id="for-buscar-alumno-genero"
+                class="container_form">
+                <label class="label" for="num_libreta">
+                    <span>G&eacute;nero</span>
+                    <input class="input" type="text" autocomplete="g&eacute;nero"
+                        required>
+                </label>
+                <button class="send_button" type="submit">Buscar</button>
+            </form>
+            <div id="response-alumno-genero">
+
+            </div>
+
+            <hr class="hr">
+
+
+
+            <div class="container_title">
+                <h1 class="title">Carreras con estudiantes</h1>
+            </div>
+
+            <div id="response-carrera-con-alumnos"></div>
+
+
+            <hr class="hr">
+
+            <div class="container_title">
+                <h1 class="title">Buscar alumnos de una carrera por ciudad</h1>
+            </div>
+            <div id="form-alumno-por-carrera-ciudad"></div>
+            <div id="response-alumno-por-carrera-ciudad"></div>
+
+            <hr class="hr">
+
+            <h1>Reporte de carreras</h1>
+            <div id="response-reporte"></div>
+            <div class="container_all">
+                <div class="container_title">
+                    <h1 class="title">Registro de estudiante</h1>
+                </div>
+                <form method="post" id="register_form" class="container_form">
+                    <label class="label" for="nombre">
+                        <span>Nombres</span>
+                        <input class="input" type="text" name="nombre" id="name"
+                            autocomplete="name" required>
+                    </label>
+                    <label class="label" for="apellido">
+                        <span>Apellido</span>
+                        <input class="input" type="text" name="apellido"
+                            id="lastname" autocomplete="lastname" required>
+                    </label>
+                    <label class="label" for="genero">
+                        <span>G&eacute;nero</span>
+                        <select class="input" name="genero" id="gender">
+                            <option value=""></option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Maculino">Maculino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </label>
+                    <label class="label" for="edad">
+                        <span>Edad</span>
+                        <input class="input" type="number" name="edad" id="dni"
+                            min="18" autocomplete="dni" required>
+                    </label>
+                    <label class="label" for="num_doc">
+                        <span>DNI</span>
+                        <input class="input" type="number" name="num_doc" id="dni"
+                            min="1000000" autocomplete="dni" required>
+                    </label>
+                    <label class="label" for="ciudad_residencia">
+                        <span>Ciudad</span>
+                        <input class="input" type="text" name="ciudad_residencia"
+                            id="city" autocomplete="city" required>
+                    </label>
+                    <button class="send_button" type="submit">Registrar</button>
+                    <hr>
+                    <!-- <input class="input" type="submit" name="send" value="Registrarse" /> -->
+                </form>
+
+                <div class="container_title">
+                    <h1 class="title">Lista de estudiantes</h1>
+                </div>
+                <div class="container_list">
+                    <ul class="container_students" id="estudiantes"></ul>
+                </div>
+            </div>
+
+            <hr class="hr">
+        </div>
+        <script src="js/form.js"></script>
+        <script src="js/fetch.js"></script>
+    </body>
+</html>

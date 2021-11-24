@@ -1,0 +1,32 @@
+<h3>Lista de Productos</h3>
+    
+<aside>
+    <div class="product-list" id="target">
+
+    </div>
+
+    <div>
+        <h3>Producto más vendido</h3>
+        <div class="product" id="most-selled"></div>
+
+        <h3>Reporte de productos vendidos por dia</h3>
+        <div class="product" id="product-selled-by-day"></div>
+    </div>
+
+    <div>
+        <form action="#" data-method="POST">
+            <h6>Crear producto</h6>
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" name="name"/>
+                <label for="price">Precio</label>
+                <input type="text" class="form-control" name="price"/>
+                <label for="description">Descripcion</label>
+                <textarea class="form-control" rows="3" name="description"></textarea>
+                <button type="submit" class="btn btn-primary">Crear</button>
+            </div>
+        </form>
+
+    </div>
+</aside>
+<pagination-component class="d-flex justify-content-center"></pagination-component>
